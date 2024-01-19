@@ -40,15 +40,35 @@ public class Counter {
 		_ctr = -99;
 	}
 
-	// TODO: dev2- method for increment to closest prime number
-	public void incrementToPrime() {
-		_ctr = -99;
-	}
+	private boolean isPrime(int n) {
+        if (n <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(n); i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 
-	// TODO: dev2- method for decrement to closest prime number
-	public void decrementToPrime() {
-		_ctr = -99;
-	}
+    // method increments _ctr to the closest prime number
+public void incrementToPrime() {
+    increment();
+
+    while (!isPrime(_ctr)) {
+        _ctr++;
+    }
+}
+
+// method decrements _ctr to the closest prime number
+public void decrementToPrime() {
+	decrement();
+
+    while (!isPrime(_ctr)) {
+        _ctr--;
+    }
+}
 
 	// TODO: dev3- count the frequency of word in sentence,
 	// refactor source code from dev1 and dev2
