@@ -29,14 +29,23 @@ public class Counter {
 	}
 
 	// TODO: dev1- method for increment to closest even number
-	public void incrementToEven() {
-		_ctr = -99;
-	}
+    public void incrementToEven() {
+        // Increment _ctr by 1 if it's odd to make it even
+        if (_ctr % 2 != 0) {
+            _ctr++;
+        }
+        // Now _ctr is guaranteed to be even
+    }
+ // TODO: dev1- method for decrement to closest even number
+public void decrementToEven() {
+    // Decrement _ctr by 1
+    _ctr--;
 
-	// TODO: dev1- method for decrement to closest even number
-	public void decrementToEven() {
-		_ctr = -99;
-	}
+    // If the result is odd, decrement again
+    if (_ctr % 2 != 0) {
+        _ctr--;
+    }
+}
 
 	// TODO: dev2- method for increment to closest prime number
 	public void incrementToPrime() {
